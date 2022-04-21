@@ -64,7 +64,7 @@ function sendMessage(event) {
     if(messageContent && stompClient) {
         var chatMessage = {
             sender: username,
-            image: 'https://tutorx.s3-ap-southeast-1.amazonaws.com/1616573938713-Profile_avtar.png',
+            image: 'image',
             content: messageContent,
             type: 'CHAT'
         };
@@ -119,7 +119,7 @@ function onMessageReceived(payload) {
         messageElement.appendChild(avatarElement);
 
         var usernameElement = document.createElement('span');
-        var usernameText = document.createTextNode(message.sender);
+        var usernameText = document.createTextNode('Sender :' + message.sender);
         usernameElement.appendChild(usernameText);
         messageElement.appendChild(usernameElement);
 
@@ -131,7 +131,7 @@ function onMessageReceived(payload) {
     }
 
     var textElement = document.createElement('p');
-    var messageText = document.createTextNode(message.content);
+    var messageText = document.createTextNode('message :' + message.content);
     textElement.appendChild(messageText);
 
     messageElement.appendChild(textElement);
