@@ -18,7 +18,7 @@ function connect(event) {
     Cookies.set('name', name1);
     usernamePage.classList.add('d-none');
     chatPage.classList.remove('d-none');
-    var socket = new SockJS('http://localhost:7005/sock');
+    var socket = new SockJS('http://3.110.108.151:7005/sock');
     stompClient = Stomp.over(socket);
     stompClient.connect({}, onConnected, onError);
     event.preventDefault();
