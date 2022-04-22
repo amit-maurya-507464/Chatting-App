@@ -18,7 +18,7 @@ function connect(event) {
     Cookies.set('name', name1);
     usernamePage.classList.add('d-none');
     chatPage.classList.remove('d-none');
-    var socket = new SockJS('http://127.0.0.1:7005/sock');
+    var socket = new SockJS('http://localhost:7005/sock');
     stompClient = Stomp.over(socket);
     stompClient.connect({}, onConnected, onError);
     event.preventDefault();
@@ -143,6 +143,6 @@ function onMessageReceived(payload) {
 $(document).ready(function() {
   userJoinForm.addEventListener('submit', connect, true);
   messagebox.addEventListener('submit', sendMessage, true);
-  hand.addEventListener('submit', raiseHand, true);
+  //hand.addEventListener('submit', raiseHand, true);
 
 });
