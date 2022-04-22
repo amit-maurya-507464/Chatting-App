@@ -119,7 +119,7 @@ function onMessageReceived(payload) {
         messageElement.appendChild(avatarElement);
 
         var usernameElement = document.createElement('span');
-        var usernameText = document.createTextNode('Sender :' + message.sender);
+        var usernameText = document.createTextNode('Sender : ' + message.sender);
         usernameElement.appendChild(usernameText);
         messageElement.appendChild(usernameElement);
 
@@ -131,7 +131,7 @@ function onMessageReceived(payload) {
     }
 
     var textElement = document.createElement('p');
-    var messageText = document.createTextNode('message :' + message.content);
+    var messageText = document.createTextNode('message : ' + message.content);
     textElement.appendChild(messageText);
 
     messageElement.appendChild(textElement);

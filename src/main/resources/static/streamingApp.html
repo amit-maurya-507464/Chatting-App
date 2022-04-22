@@ -1,0 +1,184 @@
+<!--
+  ~ Copyright(c) 2021, Developer : Amit Maurya
+  -->
+
+  <html lang="en">
+    <head>
+      <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+      <meta content="width=device-width, initial-scale=1" name="viewport" />
+      <title>Online Teaching Tool</title>
+      <!-- <link
+        rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+        crossorigin="anonymous"
+      /> -->
+      <style>
+  
+      body {
+          background-color: rgba(105, 208, 221, 0.479);
+      }
+  
+        .header {
+          overflow: hidden;
+          background-color: goldenrod;
+          padding: 10px 10px;
+        }
+  
+        .header a {
+          text-decoration: none;
+          position: relative;
+          display: inline-block;
+          font-size: 2em;
+          font-weight: 800;
+          color: royalblue;
+          overflow: hidden;
+          background: linear-gradient(
+            to right,
+            midnightblue,
+            midnightblue 50%,
+            royalblue 50%
+          );
+          background-clip: text;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-size: 200% 100%;
+          background-position: 100%;
+          transition: background-position 275ms ease;
+        }
+  
+        .header a.name {
+          font-size: 45px;
+          font-weight: bold;
+        }
+  
+        .header img {
+          max-width: 100px;
+          float: left;
+          margin: 5px 10px 0 150px;
+          border-radius: 50%;
+        }
+  
+        .header a:hover {
+          background-position: 0 100%;
+        }
+  
+        .header-right {
+          float: center;
+          margin-top: 20px;
+          margin-left: 50px;
+        }
+  
+        /* .container {
+          height: 200px;
+          position: relative;
+          border: 3px solid green;
+        } */
+  
+        .center {
+          margin: 0;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+          /* display: flex; */
+        }
+  
+        .start {
+          background-color: #4caf50; /* Green */
+          border: none;
+          color: white;
+          padding: 15px 32px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+          height: 60px;
+          width: 170px;
+        }
+  
+        .join {
+          background-color: #4caf50; /* Green */
+          border: none;
+          color: white;
+          padding: 15px 32px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+          height: 60px;
+          width: 170px;
+        }
+
+        #label {
+          font-size: 16px;
+          height: 60px;
+          width: 170px;
+        }
+
+        .roomId {
+          font-size: 16px;
+          height: 60px;
+          width: 170px;
+        }
+  
+        footer {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          text-align: center;
+          background-color: #292c2f;
+          color: white;
+        }
+      </style>
+    </head>
+    <body>
+      <div class="container">
+          <div class="headerd">
+      <header class="header">
+          <img src="pgBRs.jpg" alt="Logo">
+          <div class="header-right">
+              <a  class="name" href="http://gcsector9.ac.in/"> &nbsp; Government PG College, Sector-9, Gurugram &nbsp; </a>
+          </div>
+      </header>
+  </div>
+  </div>
+      
+  
+      <div class="container">
+        <div class="center">
+          <form action="javascript:start()" style="padding: 5px;">
+            <input type="submit" class="btn start" value="Start a class" />
+          </form>
+        </br> </br> </br> </br>
+          <form action="javascript:join()" style="padding: 5px">
+            <label for="fname" id="label">Room id : </label>
+            <input type="text" id="roomId" name="enter room id"><br><br>
+            <input type="submit" class="btn join" value="Join a class"/>
+          </form>
+        </div>
+      </div>
+
+      <script>
+        function join() {
+          window.open('http://localhost:5080/WebRTCApp/play.html?id=' + document.getElementById('roomId').value, '_self');
+        }
+
+        function start() {
+          window.open('http://localhost:5080/WebRTCApp/', '_self');
+        }
+         
+      </script>
+  
+  
+      <footer>
+          <br>
+          <p>Developed By:  Amit Maurya  &copy;  2022<br>
+      
+      </footer>
+  
+    </body>
+  </html>
+  
