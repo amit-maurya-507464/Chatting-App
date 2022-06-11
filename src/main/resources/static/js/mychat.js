@@ -19,7 +19,7 @@ function connect(event) {
     usernamePage.classList.add('d-none');
     chatPage.classList.remove('d-none');
     //var socket = new SockJS('http://127.0.0.1:7005/sock');
-    var socket = new SockJS('http://3.109.201.249:7005/sock');
+    var socket = new SockJS('http://65.0.87.175:7005/sock');
     stompClient = Stomp.over(socket);
     stompClient.connect({}, onConnected, onError);
     event.preventDefault();
