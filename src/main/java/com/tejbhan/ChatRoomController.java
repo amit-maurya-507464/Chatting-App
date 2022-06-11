@@ -22,10 +22,18 @@ public class ChatRoomController {
 
     @Autowired
     private SimpMessageSendingOperations messagingTemplate;
+    @Autowired
+    private MessagesRepo messagesRepo;
 
     @MessageMapping("/chat/{roomId}/sendMessage")
     public void sendMessage(@DestinationVariable String roomId, @Payload Message chatMessage) {
         LocalDateTime time = LocalDateTime.now();
+        Messages messages = new Messages();
+        messages.setSenderName(chatMessage.getSender());
+        messages.setMessage(chatMessage.getContent());
+        messages.setRoomId(roomId);
+        messages.setDate(time);
+        messagesRepo.save(messages);
         chatMessage.setTime(time);
         messagingTemplate.convertAndSend(format(MESSAGE_FORMAT, roomId), chatMessage);
     }
