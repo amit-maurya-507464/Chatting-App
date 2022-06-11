@@ -63,7 +63,7 @@
           background-position: 0 100%;
         }
   
-        .header-right {
+        .header-right {1px solid
           float: center;
           margin-top: 20px;
           margin-left: 50px;
@@ -78,7 +78,7 @@
         .center {
           margin: 0;
           position: absolute;
-          top: 50%;
+          top: 55%;
           left: 50%;
           -ms-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
@@ -89,7 +89,7 @@
           background-color: #4caf50; /* Green */
           border: none;
           color: white;
-          padding: 15px 32px;
+          /* padding: 15px 32px; */
           text-align: center;
           text-decoration: none;
           display: inline-block;
@@ -102,7 +102,7 @@
           background-color: #4caf50; /* Green */
           border: none;
           color: white;
-          padding: 15px 32px;
+          /* padding: 15px 32px; */
           text-align: center;
           text-decoration: none;
           display: inline-block;
@@ -117,14 +117,14 @@
           width: 170px;
         }
 
-        .roomId {
+        #roomId {
           font-size: 16px;
-          height: 60px;
+          height: 23px;
           width: 170px;
         }
   
         footer {
-          position: absolute;
+          position: fixed;
           bottom: 0;
           left: 0;
           width: 100%;
@@ -149,13 +149,12 @@
   
       <div class="container">
         <div class="center">
-          <form action="javascript:start()" style="padding: 5px;">
+          <form action="javascript:start()">
             <input type="submit" class="btn start" value="Start a class" />
           </form>
-        </br> </br> </br> </br>
-          <form action="javascript:join()" style="padding: 5px">
-            <label for="fname" id="label">Room id : </label>
-            <input type="text" id="roomId" name="enter room id"><br><br>
+        </br> </br>
+          <form action="javascript:join()">
+            <input type="text" id="roomId" placeholder="Enter Room Id"><br><br>
             <input type="submit" class="btn join" value="Join a class"/>
           </form>
         </div>
@@ -163,7 +162,7 @@
 
       <script>
         function join() {
-          window.open('http://localhost:5080/WebRTCApp/play.html?id=' + document.getElementById('roomId').value, '_self');
+          window.open('http://localhost:5080/WebRTCApp/joinClass.html?id=' + document.getElementById('roomId').value, '_self');
         }
 
         function start() {
