@@ -12,13 +12,13 @@ public interface MessagesRepo extends JpaRepository<Messages, Long> {
     @Query(nativeQuery = true, value = "select * from messages where room_id =:roomId")
     List<Messages> findByRoomId(String roomId);
 
-    @Query(nativeQuery = true, value = "select room_id from messages")
+    @Query(nativeQuery = true, value = "select distinct room_id from messages")
     List<String> findAllRoomId();
 
-    @Query(nativeQuery = true, value = "select sender_name from messages")
+    @Query(nativeQuery = true, value = "select distinct sender_name from messages")
     List<String> findAllUsers();
 
-    @Query(nativeQuery = true, value = "select sender_name from messages where room_id =:roomId")
+    @Query(nativeQuery = true, value = "select distinct sender_name from messages where room_id =:roomId")
     List<String> findUsersByRoomId(String roomId);
 
 }
